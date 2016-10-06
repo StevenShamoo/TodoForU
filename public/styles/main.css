@@ -1,0 +1,13 @@
+#addDescription {
+  height: 100px;
+  width: 300px; }
+
+#updateDescription {
+  height: 100px;
+  width: 300px; }
+
+.wordWrapper {
+  word-wrap: break-word;
+  width: 50%; }
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,48 @@
+extends layout.pug
+
+block content
+  nav.navbar.navbar-default
+    .container-fluid
+      .navbar-header
+        a.navbar-brand
+          strong TodoForU
+      ul.nav.navbar-nav
+        li#activeShowList
+          a#showTaskListClick(href='#showList') MyTodoList
+        li#activeAddTask
+          a#addTaskClick(href='#addTask') Add New Task
+  #PageWrapper
+    #TableWrapper
+      .panel.panel-default
+        .panel-heading Todo List
+        .panel-body= todop
+        table.table#populateThis
+          tr
+            th Task Name
+            th Due Date
+            th Time
+            th Description
+            th Delete/Update
+          tbody#targetTbody
+    #TableWrapperAdd
+      .panel.panel-default
+        .panel-heading Add to List
+        .panel-body= todopadd
+          form.addInputForm
+            +inputFormAdd
+            br
+            button#addItemToList Add Task
+    #UpdateModalWrapper
+      #updateModalPanel
+        .modal.fade#updateModal(tabindex='-1')
+          .modal-dialog(role="document")
+            .modal-content
+              .modal-header
+                button.close(type='button' data-dismiss='modal') x
+                h4.modal-title Update User
+              .modal-body
+                form.updateTask
+                  +inputFormUpdate
+              .modal-footer
+                button.btn.btn-default#closeUpdate(type='button' data-dismiss='modal') Close
+                button.btn.btn-primary#updateTaskButton(type='button') Update Task

@@ -1,0 +1,17 @@
+@mixin descriptionBox{
+  height: 100px;
+  width:300px;
+}
+
+
+#addDescription{
+  @include descriptionBox;
+}
+#updateDescription{
+  @include descriptionBox;
+}
+
+.wordWrapper {
+  word-wrap: break-word;
+  width: 50%;
+}
