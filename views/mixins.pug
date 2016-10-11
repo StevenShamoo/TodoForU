@@ -1,13 +1,16 @@
 mixin inputFormAdd
-  | Task Name:
+  strong
+    | Task Name:
   br
   input#addTaskName(type='text')
   br
-  | Due Date:
+  strong
+    | Due Date:
   br
-  input#addDueDate(type='date')
+  input#addDueDate
   br
-  | Time(Hour)
+  strong
+    | Time(Hour)
   br
   select#addTime
     option(value='12') 12
@@ -26,21 +29,25 @@ mixin inputFormAdd
     option(value='AM') AM
     option(value='PM') PM
   br
-  | Description:
+  strong
+    | Description:
   br
   textarea#addDescription(type='text')
 
 
 mixin inputFormUpdate
-  | Task Name:
+  strong
+    | Task Name:
   br
   input#updateTaskName(type='text')
   br
-  | Due Date:
+  strong
+    | Due Date:
   br
-  input#updateDueDate(type='date')
+  input#updateDueDate
   br
-  | Time(Hour)
+  strong
+    | Time(Hour)
   br
   select#updateTime
     option(value='12') 12
@@ -59,6 +66,7 @@ mixin inputFormUpdate
     option(value='AM') AM
     option(value='PM') PM
   br
-  | Description:
+  strong
+    | Description:
   br
   textarea#updateDescription(type='text')

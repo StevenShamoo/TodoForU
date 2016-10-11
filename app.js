@@ -4,9 +4,13 @@ var bodyparser = require('body-parser');
 
 var mongodb = require('mongodb');
 var monk = require('monk');
-var db = monk('localhost:27017/todoforu');
 
-//console.log(db);
+
+if (process.env.PORT) {
+  var db = monk('localhost:27017/todoforu'); // this is going to be whatever static address that mongolabs gives me
+}else {
+  var db = monk('localhost/todoforu');
+}
 
 var index = require('./routes/index');
 

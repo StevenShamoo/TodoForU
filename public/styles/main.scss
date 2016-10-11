@@ -3,6 +3,9 @@
   width:300px;
 }
 
+$primaryColor: #34495e;
+$secondaryColor:#7f8c8d;
+$fontColor: #ecf0f1;
 
 #addDescription{
   @include descriptionBox;
@@ -11,7 +14,61 @@
   @include descriptionBox;
 }
 
+#tableHeader {
+  background-color: $secondaryColor;
+  color: $fontColor;
+}
+
+#tableHeaderAdd {
+  background-color: $secondaryColor;
+  color: $fontColor;
+}
+
+#navBar {
+  background-color: $primaryColor;
+  color: $fontColor;
+}
+
+#navBrand{
+  background-color: $primaryColor;
+  color: $fontColor;
+  font-weight: bold;
+}
+#showTaskListClick{
+  color: $fontColor;
+}
+#addTaskClick {
+  color: $fontColor;
+}
+
+#modalHeader{
+  background-color: $secondaryColor;
+}
+
+#TableWrapperAdd {
+  max-width: 1000px;
+  margin: 200px;
+  margin-top: 20px;
+}
+
+.addInputForm{
+  text-align: center;
+
+}
+.activeMe {
+  background-color: #2980b9;
+}
+
+.buttonDelete {
+  background-color: #e74c3c;
+}
+
+.buttonUpdate {
+  background-color: #2980b9;
+}
+
 .wordWrapper {
   word-wrap: break-word;
   width: 50%;
 }
+

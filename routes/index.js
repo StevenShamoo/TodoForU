@@ -5,8 +5,8 @@ var router = express.Router();
 
 
 var todo = 'Welcome to TodoForU, here is your current todo list. '  +
-'If you would like to add or delete click on the tab above, ' +
-'or if you want to update a task, use the update tab.'
+'If you would like to add a task, click on the link above. ' +
+'If you would like to delete or update a task please use the buttons below on the data table.'
 
 var todoadd = 'This tab is for adding new tasks.  When you are done ' +
 'click the Add Task button and it will add it to your current todo list.'

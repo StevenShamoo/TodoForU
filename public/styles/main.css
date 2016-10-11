@@ -6,6 +6,49 @@
   height: 100px;
   width: 300px; }
 
+#tableHeader {
+  background-color: #7f8c8d;
+  color: #ecf0f1; }
+
+#tableHeaderAdd {
+  background-color: #7f8c8d;
+  color: #ecf0f1; }
+
+#navBar {
+  background-color: #34495e;
+  color: #ecf0f1; }
+
+#navBrand {
+  background-color: #34495e;
+  color: #ecf0f1;
+  font-weight: bold; }
+
+#showTaskListClick {
+  color: #ecf0f1; }
+
+#addTaskClick {
+  color: #ecf0f1; }
+
+#modalHeader {
+  background-color: #7f8c8d; }
+
+#TableWrapperAdd {
+  max-width: 1000px;
+  margin: 200px;
+  margin-top: 20px; }
+
+.addInputForm {
+  text-align: center; }
+
+.activeMe {
+  background-color: #2980b9; }
+
+.buttonDelete {
+  background-color: #e74c3c; }
+
+.buttonUpdate {
+  background-color: #2980b9; }
+
 .wordWrapper {
   word-wrap: break-word;
   width: 50%; }

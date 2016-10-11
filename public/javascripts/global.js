@@ -16,6 +16,9 @@ $('#updateTaskButton').on('click', updateTask);
 //Functions
 $('#TableWrapperAdd').hide();
 populateTable();
+//initially set the table you want to be sorted (everytime we do it again we will do $('#populateThis').trigger('update') so it doesnt duplicate the table.)
+$('#populateThis').tablesorter();
+
 
 
 
@@ -26,19 +29,22 @@ function addButton(event){
   event.preventDefault();
   }
   $('#activeShowList').attr('class', '');
-  $('#activeAddTask').attr('class', 'active');
+  $('#activeAddTask').attr('class', 'activeMe');
   $('#TableWrapper').hide();
   $('#TableWrapperAdd').show();
+  $('#populateThis').hide();
+  $('#addDueDate').datepicker();
 }
 
 function showButton(event){
   if(event){
   event.preventDefault();
   }
-  $('#activeShowList').attr('class', 'active');
+  $('#activeShowList').attr('class', 'activeMe');
   $('#activeAddTask').attr('class', '');
   $('#TableWrapperAdd').hide();
   $('#TableWrapper').show();
+  $('#populateThis').show();
 
 }
 
@@ -72,12 +78,12 @@ function populateTable(event){
     $('#targetTbody').html(tableData);
     $('.buttonDelete').on('click', deleteTask);
     $('.buttonUpdate').on('click', makeUpdateModal);
+    $('#populateThis').trigger('update');
   });
 }
 
 function addToList(event){
   
-  console.log('Ive been called');
   event.preventDefault();
 
   var dataToSend = {
@@ -88,7 +94,6 @@ function addToList(event){
     'taskDescription': $('#addDescription').val()
 
   };
-  console.log('data to send',dataToSend);
   var errorcount = 0;
   
   _.each(dataToSend, function(data){
@@ -112,6 +117,7 @@ function addToList(event){
         $('.addInputForm input').val('');
         $('#addTime').val('12');
         $('#amPm').val('AM');
+        alert('You have successfully added a task!');
       }else{
         return alert(res.msg);
       }
@@ -153,6 +159,8 @@ function makeUpdateModal(event) {
     type:'GET',
     url:'/makeupdatemodal/' + $(this).attr('rel')
   }).done(function(results){
+    $('#updateDueDate').datepicker();
+
     var modalData = results[0];
 
     $('#updateTaskName').val(modalData.taskName);
@@ -193,6 +201,7 @@ function updateTask(event) {
     }else{
       return alert('Error while updating');
     }
+    populateTable();
   });
 
 }

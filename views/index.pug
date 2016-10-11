@@ -1,11 +1,10 @@
 extends layout.pug
 
 block content
-  nav.navbar.navbar-default
+  nav.navbar.navbar-default#navBar
     .container-fluid
       .navbar-header
-        a.navbar-brand
-          strong TodoForU
+        a.navbar-brand#navBrand TodoForU
       ul.nav.navbar-nav
         li#activeShowList
           a#showTaskListClick(href='#showList') MyTodoList
@@ -14,19 +13,11 @@ block content
   #PageWrapper
     #TableWrapper
       .panel.panel-default
-        .panel-heading Todo List
+        .panel-heading#tableHeader Todo List
         .panel-body= todop
-        table.table#populateThis
-          tr
-            th Task Name
-            th Due Date
-            th Time
-            th Description
-            th Delete/Update
-          tbody#targetTbody
     #TableWrapperAdd
       .panel.panel-default
-        .panel-heading Add to List
+        .panel-heading#tableHeaderAdd Add to List
         .panel-body= todopadd
           form.addInputForm
             +inputFormAdd
@@ -44,5 +35,14 @@ block content
                 form.updateTask
                   +inputFormUpdate
               .modal-footer
-                button.btn.btn-default#closeUpdate(type='button' data-dismiss='modal') Close
+                button.btn.btn-default#closeUpdate(type='button' data-dismiss='modal') Cancel
                 button.btn.btn-primary#updateTaskButton(type='button') Update Task
+    table#populateThis
+      thead
+        tr
+          th Task Name
+          th Due Date
+          th Time
+          th Description
+          th Delete/Update
+      tbody#targetTbody
