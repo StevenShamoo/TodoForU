@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
 
 //Listeners
@@ -15,6 +14,8 @@ $('#updateTaskButton').on('click', updateTask);
 
 //Functions
 $('#TableWrapperAdd').hide();
+wipeTasks();
+sampleAdder();
 populateTable();
 //initially set the table you want to be sorted (everytime we do it again we will do $('#populateThis').trigger('update') so it doesnt duplicate the table.)
 $('#populateThis').tablesorter();
@@ -46,10 +47,6 @@ function showButton(event){
   $('#TableWrapper').show();
   $('#populateThis').show();
 
-}
-
-function clickAdd(){
-  
 }
 
 function populateTable(event){
@@ -174,9 +171,6 @@ function makeUpdateModal(event) {
 
   });
 }
-
-
-
 function updateTask(event) {
   if(event){
     event.preventDefault();
@@ -204,6 +198,41 @@ function updateTask(event) {
     populateTable();
   });
 
+}
+
+
+function wipeTasks(event) {
+  if(event) {
+    event.preventDefault();
+  }
+    $.ajax({
+      type: 'DELETE',
+      url:'/wipeTasks/'
+    }).done(function(response){
+      if (response.msg === ''){
+        populateTable();
+      }else{
+        return alert('Error occured while trying to delete.');
+      }
+    });
+}
+
+function sampleAdder() {
+  var dataToSend = {
+    'taskName': 'Sample Task',
+    'taskDate': '10/11/2016',
+    'taskTime': '4',
+    'taskAmPm': 'PM',
+    'taskDescription': 'This is a sample task to show how it looks after you have made one.'
+  };
+    $.ajax({
+      type: 'POST',
+      data: dataToSend,
+      url: '/addtask',
+      dataType: 'JSON'
+    }).done(function(res) {
+
+    });
 }
 
 
