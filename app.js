@@ -7,10 +7,18 @@ var monk = require('monk');
 
 
 if (process.env.PORT) {
+<<<<<<< HEAD
   var db = monk('localhost:27017/todoforu'); // this is going to be whatever static address that mongolabs gives me
 }else {
   var db = monk('localhost/todoforu');
 }
+=======
+  var db = monk('localhost:27017/todoforu');
+} else {
+  var db = monk('localhost/todoforu');
+}
+
+>>>>>>> 847864f4ab3189206eab7ddc06c9c65f180eb7bf
 
 var index = require('./routes/index');
 
