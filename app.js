@@ -6,8 +6,8 @@ var mongodb = require('mongodb');
 var monk = require('monk');
 
 
-if (process.env.PORT) {
-  var db = monk('localhost:27017/todoforu'); // this is going to be whatever static address that mongolabs gives me
+if (process.env.MONGODB_URI) {
+  var db = monk(process.env.MONGODB_URI); // this is going to be whatever static address that mongolabs gives me
 }else {
   var db = monk('localhost/todoforu');
 }
