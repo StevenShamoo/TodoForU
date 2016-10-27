@@ -7,7 +7,7 @@ var router = express.Router();
 var todo = 'Welcome to TodoForU, here is your current todo list. '  +
 'If you would like to add a task, click on the link above. ' +
 'If you would like to delete or update a task please use the buttons below on the data table.' +
-'WARNING:  THIS SITE WIPES THE DATABASE ON EVERY RELOAD OR PAGE START.  THE SITE IS FOR SHOWCASE ONLY, THIS WAS A NECESSARY STEP FOR MAINTENANCE OF THE SITE.'
+'WARNING: The Database will wipe everytime you leave the site, this was necessary for maintenance of the site.'
 
 var todoadd = 'This tab is for adding new tasks.  When you are done ' +
 'click the Add Task button and it will add it to your current todo list.'
